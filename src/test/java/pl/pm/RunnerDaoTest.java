@@ -30,7 +30,7 @@ public class RunnerDaoTest {
 
     @Test
     public void shouldDeleteRunner() {
-        Assert.assertTrue(runnerManager.deleteRunner(4));
+        Assert.assertTrue(runnerManager.deleteRunner(2));
     }
 
     @Test

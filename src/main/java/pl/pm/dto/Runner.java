@@ -2,6 +2,7 @@ package pl.pm.dto;
 
 import javax.persistence.*;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -22,6 +23,9 @@ public class Runner {
 
     @Column(name = "current_run_time")
     private LocalTime currentRunTime;
+
+    @ManyToMany(mappedBy = "participants")
+    private List<Run> runs;
 
     public Runner(String firstName, String lastName, LocalTime bestTime) {
         this.firstName = firstName;

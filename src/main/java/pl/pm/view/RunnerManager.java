@@ -1,5 +1,6 @@
 package pl.pm.view;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import pl.pm.dao.RunnerDao;
 import pl.pm.dto.Runner;
 import pl.pm.view.table.TablePrinter;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class RunnerManager {
 
-    RunnerDao runnerDao = new RunnerDao();
+    private RunnerDao runnerDao = new RunnerDao();
 
     public Runner createRunner(String firstName, String lastName) {
         return new Runner(firstName, lastName);

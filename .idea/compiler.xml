@@ -9,5 +9,8 @@
         <module name="runnersconsole" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="runnersconsole" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
