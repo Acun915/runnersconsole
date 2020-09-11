@@ -3,12 +3,9 @@ package pl.pm.dao;
 import pl.pm.dto.Runner;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
-
+import java.util.ArrayList;
 import java.util.List;
-
-import static javax.persistence.Persistence.createEntityManagerFactory;
 
 public class RunnerDao {
 
@@ -55,6 +52,19 @@ public class RunnerDao {
 
     public List<Runner> getAllRunners() {
         return (List<Runner>) entityManager.createQuery("SELECT r from Runner r").getResultList();
+    }
+
+    public List<Runner> getRunnersFromSpecificRun(Integer runId) {
+        List<Runner> runners = new ArrayList<>();
+        List<Integer> runnersId = entityManager.createNativeQuery(
+                "SELECT participants_id FROM run_runner WHERE runs_id =" + runId)
+                .getResultList();
+
+        for (int integer : runnersId) {
+            runners.add(findRunnerById(integer));
+        }
+
+         return runners;
     }
 
     private Runner findRunnerById(Integer id) {

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-public class Runner {
+public class Runner implements Comparable<Runner>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -96,5 +96,10 @@ public class Runner {
     @Override
     public int hashCode() {
         return Objects.hash(id, firstName, lastName, bestTime, currentRunTime);
+    }
+
+    @Override
+    public int compareTo(Runner runner) {
+       return this.currentRunTime.compareTo(runner.currentRunTime);
     }
 }

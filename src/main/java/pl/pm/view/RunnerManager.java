@@ -1,13 +1,9 @@
 package pl.pm.view;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import pl.pm.dao.RunnerDao;
 import pl.pm.dto.Runner;
 import pl.pm.view.table.TablePrinter;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.time.LocalTime;
-import java.util.Collections;
 import java.util.List;
 
 public class RunnerManager {
