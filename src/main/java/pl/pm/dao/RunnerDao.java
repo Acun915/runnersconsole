@@ -9,6 +9,7 @@ import java.util.List;
 
 public class RunnerDao {
 
+    //workat home
     private EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
 
     public boolean addRunner(Runner runner){
